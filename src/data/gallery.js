@@ -64,21 +64,21 @@ export const galleryData = [
   },
   {
     "id": "gallery-3-0",
-    "title": "दिव्यांग बच्चों के साथ भेंट (Supporting Deaf & Dumb Children)",
+    "title": "दिव्यांग बच्चों के साथ भेंट (Supporting Speech & Hearing Impaired Children)",
     "category": "Community Outreach",
     "image": "/content/work/3//WhatsApp Unknown 2026-07-09 at 22.11.19/WhatsApp Image 2026-07-05 at 11.08.14.jpeg",
     "caption": "आज नवोदय जन सेवा समिति द्वारा मूक बधिर बच्चों के बीच जाकर उनके सुख-दुख का छोटा सा हिस्सा बनकर उनको एक सामान्य सा महसूस करने की कोशिश की। यह सब हमारी समिति द्वारा छोटा सा प्रयास था कि वह दिव्यांग बच्चों अपनी आपको कमजोर ना समझे बल्कि एक सामान्य बच्चों की तरह अपने आप को मजबूत समझे।"
   },
   {
     "id": "gallery-3-1",
-    "title": "दिव्यांग बच्चों के साथ भेंट (Supporting Deaf & Dumb Children)",
+    "title": "दिव्यांग बच्चों के साथ भेंट (Supporting Speech & Hearing Impaired Children)",
     "category": "Community Outreach",
     "image": "/content/work/3//WhatsApp Unknown 2026-07-09 at 22.11.19/WhatsApp Image 2026-07-05 at 11.08.15 (1).jpeg",
     "caption": "आज नवोदय जन सेवा समिति द्वारा मूक बधिर बच्चों के बीच जाकर उनके सुख-दुख का छोटा सा हिस्सा बनकर उनको एक सामान्य सा महसूस करने की कोशिश की। यह सब हमारी समिति द्वारा छोटा सा प्रयास था कि वह दिव्यांग बच्चों अपनी आपको कमजोर ना समझे बल्कि एक सामान्य बच्चों की तरह अपने आप को मजबूत समझे।"
   },
   {
     "id": "gallery-3-2",
-    "title": "दिव्यांग बच्चों के साथ भेंट (Supporting Deaf & Dumb Children)",
+    "title": "दिव्यांग बच्चों के साथ भेंट (Supporting Speech & Hearing Impaired Children)",
     "category": "Community Outreach",
     "image": "/content/work/3//WhatsApp Unknown 2026-07-09 at 22.11.19/WhatsApp Image 2026-07-05 at 11.08.15.jpeg",
     "caption": "आज नवोदय जन सेवा समिति द्वारा मूक बधिर बच्चों के बीच जाकर उनके सुख-दुख का छोटा सा हिस्सा बनकर उनको एक सामान्य सा महसूस करने की कोशिश की। यह सब हमारी समिति द्वारा छोटा सा प्रयास था कि वह दिव्यांग बच्चों अपनी आपको कमजोर ना समझे बल्कि एक सामान्य बच्चों की तरह अपने आप को मजबूत समझे।"
