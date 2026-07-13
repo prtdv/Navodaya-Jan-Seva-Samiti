@@ -4,7 +4,7 @@ import About from "./components/About";
 import OurWork from "./components/OurWork";
 import Gallery from "./components/Gallery";
 import Stories from "./components/Stories";
-// import Contact from "./components/Contact";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -17,7 +17,7 @@ export default function App() {
         <OurWork />
         <Gallery />
         <Stories />
-        {/* <Contact /> */}
+        <Contact />
       </main>
       <Footer />
     </div>

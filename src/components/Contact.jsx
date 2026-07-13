@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaFacebook, FaInstagram } from "react-icons/fa";
 import { contactData } from "../data/contact";
 
 export default function Contact() {
@@ -14,57 +14,47 @@ export default function Contact() {
             Connect With Us
           </h2>
           <p className="text-brand-primary/60 text-sm font-light leading-relaxed max-w-lg mx-auto">
-            Reach out directly for collaborations, inquiries, or to visit our learning centers.
+            Reach out directly for collaborations, inquiries, or to support our work.
           </p>
           <div className="w-16 h-[2px] bg-brand-secondary mx-auto mt-4" />
         </div>
 
-        {/* Contact Info & Map Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
-          
-          {/* Details Panel */}
+        {/* Contact Info Grid */}
+        <div className="max-w-2xl mx-auto">
           <motion.div
-            className="lg:col-span-5 flex flex-col justify-between space-y-12 bg-white border border-brand-secondary/20 p-8 md:p-10 shadow-sm"
+            className="flex flex-col items-center space-y-10 bg-white border border-brand-secondary/20 p-8 md:p-12 shadow-sm text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="space-y-8">
-              <h3 className="font-serif text-2xl font-semibold text-brand-primary">Office Details</h3>
+            <div className="w-full space-y-8 flex flex-col items-center">
+              <h3 className="font-serif text-2xl font-semibold text-brand-primary">Contact Details</h3>
               
-              <div className="flex items-start space-x-4">
-                <FaMapMarkerAlt className="w-5 h-5 text-brand-accent mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="text-xs uppercase tracking-wider text-brand-primary/50 font-medium mb-1">Office Address</h4>
-                  <p className="text-sm text-brand-primary/80 font-light leading-relaxed">{contactData.address}</p>
+              <div className="flex flex-col items-center space-y-2">
+                <div className="w-10 h-10 rounded-full bg-brand-secondary/10 flex items-center justify-center mb-1">
+                  <FaPhone className="w-5 h-5 text-brand-accent" />
                 </div>
+                <h4 className="text-xs uppercase tracking-wider text-brand-primary/50 font-medium">Phone Number</h4>
+                <a href={`tel:${contactData.phone}`} className="text-lg text-brand-primary hover:text-brand-accent transition-colors font-medium">
+                  {contactData.phone}
+                </a>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <FaPhone className="w-5 h-5 text-brand-accent mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="text-xs uppercase tracking-wider text-brand-primary/50 font-medium mb-1">Phone Number</h4>
-                  <a href={`tel:${contactData.phone}`} className="text-sm text-brand-primary hover:text-brand-accent transition-colors font-medium">
-                    {contactData.phone}
-                  </a>
+              <div className="flex flex-col items-center space-y-2">
+                <div className="w-10 h-10 rounded-full bg-brand-secondary/10 flex items-center justify-center mb-1">
+                  <FaEnvelope className="w-5 h-5 text-brand-accent" />
                 </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <FaEnvelope className="w-5 h-5 text-brand-accent mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="text-xs uppercase tracking-wider text-brand-primary/50 font-medium mb-1">Email Address</h4>
-                  <a href={`mailto:${contactData.email}`} className="text-sm text-brand-primary hover:text-brand-accent transition-colors font-medium">
-                    {contactData.email}
-                  </a>
-                </div>
+                <h4 className="text-xs uppercase tracking-wider text-brand-primary/50 font-medium">Email Address</h4>
+                <a href={`mailto:${contactData.email}`} className="text-lg text-brand-primary hover:text-brand-accent transition-colors font-medium break-all">
+                  {contactData.email}
+                </a>
               </div>
             </div>
 
-            <div className="space-y-4 pt-6 border-t border-brand-secondary/20">
+            <div className="w-full space-y-4 pt-8 border-t border-brand-secondary/20 flex flex-col items-center">
               <h4 className="text-xs uppercase tracking-widest text-brand-primary/60 font-semibold">Join the conversation</h4>
-              <div className="flex space-x-5">
+              <div className="flex space-x-6">
                 <a
                   href={contactData.facebook}
                   target="_blank"
@@ -87,27 +77,6 @@ export default function Contact() {
             </div>
 
           </motion.div>
-
-          {/* Interactive Google Map Panel */}
-          <motion.div
-            className="lg:col-span-7 h-[350px] lg:h-auto border border-brand-secondary/20 shadow-sm overflow-hidden"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-          >
-            <iframe
-              title="NGO Office Map Location"
-              src={contactData.googleMapsEmbed}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </motion.div>
-
         </div>
       </div>
     </section>
