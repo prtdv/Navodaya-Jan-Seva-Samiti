@@ -110,9 +110,17 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Mobile Menu Backdrop */}
+      {isMobileMenuOpen && (
+        <div
+          className="lg:hidden fixed inset-0 bg-black/40 backdrop-blur-xs z-40 transition-opacity"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
       {/* Mobile Navigation Drawer */}
       <div
-        className={`lg:hidden fixed inset-y-0 right-0 w-72 bg-brand-bg z-45 transform transition-transform duration-300 ease-in-out shadow-2xl flex flex-col justify-between py-12 px-8 ${
+        className={`lg:hidden fixed inset-y-0 right-0 w-72 bg-white border-l border-brand-secondary/20 z-45 transform transition-transform duration-300 ease-in-out shadow-2xl flex flex-col justify-between py-12 px-8 ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
