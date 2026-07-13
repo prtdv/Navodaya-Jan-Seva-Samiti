@@ -30,97 +30,99 @@ export default function Navbar() {
   ];
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-brand-bg/95 backdrop-blur-md border-b border-brand-secondary/20 py-4 shadow-sm"
-          : "bg-transparent py-6"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        {/* Brand Logo / Name */}
-        <a
-          href="#home"
-          className="flex items-center space-x-3 group"
-        >
-          <img
-            src={aboutData.logo.square}
-            alt={aboutData.name}
-            className="w-10 h-10 rounded-full object-cover border border-white/20 shadow-sm transition-transform duration-300 group-hover:scale-105"
-          />
-          <span
-            className={`font-serif text-lg md:text-xl font-semibold tracking-wide transition-colors duration-300 ${
-              isScrolled ? "text-brand-primary" : "text-white"
-            }`}
+    <>
+      <nav
+        className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
+          isScrolled
+            ? "bg-brand-bg/95 backdrop-blur-md border-b border-brand-secondary/20 py-4 shadow-sm"
+            : "bg-transparent py-6"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+          {/* Brand Logo / Name */}
+          <a
+            href="#home"
+            className="flex items-center space-x-3 group"
           >
-            {aboutData.name}
-          </span>
-        </a>
-
-        {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className={`text-sm tracking-wider uppercase font-medium transition-colors duration-200 hover:text-brand-accent ${
-                isScrolled ? "text-brand-primary/80" : "text-white/80"
+            <img
+              src={aboutData.logo.square}
+              alt={aboutData.name}
+              className="w-10 h-10 rounded-full object-cover border border-white/20 shadow-sm transition-transform duration-300 group-hover:scale-105"
+            />
+            <span
+              className={`font-serif text-lg md:text-xl font-semibold tracking-wide transition-colors duration-300 ${
+                isScrolled ? "text-brand-primary" : "text-white"
               }`}
             >
-              {link.name}
+              {aboutData.name}
+            </span>
+          </a>
+
+          {/* Desktop Navigation Links */}
+          <div className="hidden lg:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className={`text-sm tracking-wider uppercase font-medium transition-colors duration-200 hover:text-brand-accent ${
+                  isScrolled ? "text-brand-primary/80" : "text-white/80"
+                }`}
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+
+          {/* Social Icons (Desktop) */}
+          <div className="hidden lg:flex items-center space-x-5">
+            <a
+              href={contactData.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`transition-colors duration-200 hover:text-brand-accent ${
+                isScrolled ? "text-brand-primary" : "text-white"
+              }`}
+              aria-label="Facebook"
+            >
+              <FaFacebookF className="w-5 h-5" />
             </a>
-          ))}
-        </div>
+            <a
+              href={contactData.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`transition-colors duration-200 hover:text-brand-accent ${
+                isScrolled ? "text-brand-primary" : "text-white"
+              }`}
+              aria-label="Instagram"
+            >
+              <FaInstagram className="w-5 h-5" />
+            </a>
+          </div>
 
-        {/* Social Icons (Desktop) */}
-        <div className="hidden lg:flex items-center space-x-5">
-          <a
-            href={contactData.facebook}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`transition-colors duration-200 hover:text-brand-accent ${
+          {/* Mobile Toggle Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className={`lg:hidden transition-colors duration-200 hover:text-brand-accent cursor-pointer ${
               isScrolled ? "text-brand-primary" : "text-white"
             }`}
-            aria-label="Facebook"
+            aria-label="Toggle menu"
           >
-            <FaFacebookF className="w-5 h-5" />
-          </a>
-          <a
-            href={contactData.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`transition-colors duration-200 hover:text-brand-accent ${
-              isScrolled ? "text-brand-primary" : "text-white"
-            }`}
-            aria-label="Instagram"
-          >
-            <FaInstagram className="w-5 h-5" />
-          </a>
+            {isMobileMenuOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
+          </button>
         </div>
-
-        {/* Mobile Toggle Button */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`lg:hidden transition-colors duration-200 hover:text-brand-accent ${
-            isScrolled ? "text-brand-primary" : "text-white"
-          }`}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
-        </button>
-      </div>
+      </nav>
 
       {/* Mobile Menu Backdrop */}
       {isMobileMenuOpen && (
         <div
-          className="lg:hidden fixed inset-0 bg-black/40 backdrop-blur-xs z-40 transition-opacity"
+          className="lg:hidden fixed inset-0 bg-black/45 backdrop-blur-xs z-45 transition-opacity"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
 
       {/* Mobile Navigation Drawer */}
       <div
-        className={`lg:hidden fixed inset-y-0 right-0 w-72 bg-white border-l border-brand-secondary/20 z-45 transform transition-transform duration-300 ease-in-out shadow-2xl flex flex-col justify-between py-12 px-8 ${
+        className={`lg:hidden fixed inset-y-0 right-0 w-72 bg-white border-l border-brand-secondary/20 z-50 transform transition-transform duration-300 ease-in-out shadow-2xl flex flex-col justify-between py-12 px-8 ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -161,6 +163,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </nav>
+    </>
   );
 }
